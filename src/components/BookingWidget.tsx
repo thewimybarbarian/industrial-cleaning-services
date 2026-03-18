@@ -65,7 +65,7 @@ export default function BookingWidget() {
               {FREQUENCY_OPTIONS.map((opt) => (
                 <label
                   key={opt.id}
-                  className={`relative flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 cursor-pointer transition-all text-sm ${
+                  className={`relative overflow-visible flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 cursor-pointer transition-all text-sm ${
                     frequency === opt.id
                       ? "border-green bg-green/5 text-dark font-semibold"
                       : "border-gray-200 text-dark/70 hover:border-green/40"
@@ -93,7 +93,7 @@ export default function BookingWidget() {
                     </span>
                   )}
                   {"badge" in opt && opt.badge && (
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[10px] font-bold text-green bg-green/10 px-2 py-0.5 rounded-full whitespace-nowrap">
+                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 text-[10px] font-bold text-white bg-green px-2.5 py-0.5 rounded-full whitespace-nowrap shadow-sm">
                       {opt.badge}
                     </span>
                   )}
