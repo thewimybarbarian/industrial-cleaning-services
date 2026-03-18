@@ -3,7 +3,7 @@ export const PER_BEDROOM = 30;
 export const PER_BATHROOM = 20;
 
 export const FREQUENCY_OPTIONS = [
-  { id: "once", label: "One time service", discount: 0 },
+  { id: "once", label: "One time", discount: 0 },
   { id: "weekly", label: "Every week", discount: 0.20, badge: "Most popular" },
   { id: "biweekly", label: "Every 2 weeks", discount: 0.15 },
   { id: "monthly", label: "Every 4 weeks", discount: 0.10 },
@@ -16,10 +16,4 @@ export function calculatePrice(bedrooms: number, bathrooms: number, frequency: F
   const option = FREQUENCY_OPTIONS.find((o) => o.id === frequency);
   const discount = option?.discount ?? 0;
   return Math.round(base * (1 - discount));
-}
-
-export function getDiscountLabel(frequency: FrequencyId): string | null {
-  const option = FREQUENCY_OPTIONS.find((o) => o.id === frequency);
-  if (!option || option.discount === 0) return null;
-  return `${Math.round(option.discount * 100)}% off`;
 }

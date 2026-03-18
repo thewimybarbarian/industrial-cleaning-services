@@ -39,7 +39,7 @@ export default function Navbar() {
             href="#pricing"
             className="px-5 py-2.5 rounded-full bg-green text-white font-semibold text-sm hover:bg-green-dark transition-colors shadow-md hover:shadow-lg"
           >
-            Get a Quote
+            Book a Cleaning
           </a>
         </div>
 
@@ -67,7 +67,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="px-5 py-2.5 rounded-full bg-green text-white font-semibold text-center shadow-md"
           >
-            Get a Quote
+            Book a Cleaning
           </a>
         </div>
       )}

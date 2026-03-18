@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-            Professional house cleaning services in the Oklahoma City metro area. Licensed, bonded, and insured.
+            Local house cleaning you can count on. Serving homes and businesses across the OKC metro area.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h3 className="font-bold text-sm uppercase tracking-wider mb-4 text-white/80">Contact Us</h3>
+          <h3 className="font-bold text-sm uppercase tracking-wider mb-4 text-white/80">Get In Touch</h3>
           <ul className="space-y-3 text-sm text-white/60">
             <li className="flex items-center gap-2">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -68,7 +68,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 text-center text-xs text-white/40">
-        &copy; {new Date().getFullYear()} Industrial Cleaning Services. All rights reserved.
+        &copy; {new Date().getFullYear()} Industrial Cleaning Co. All rights reserved.
       </div>
     </footer>
   );

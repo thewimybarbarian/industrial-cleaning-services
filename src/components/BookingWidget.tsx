@@ -6,7 +6,7 @@ import ScheduleModal from "./ScheduleModal";
 
 export default function BookingWidget() {
   const [bedrooms, setBedrooms] = useState(3);
-  const [bathrooms, setBathrooms] = useState(1);
+  const [bathrooms, setBathrooms] = useState(2);
   const [frequency, setFrequency] = useState<FrequencyId>("weekly");
   const [showModal, setShowModal] = useState(false);
 
@@ -14,14 +14,14 @@ export default function BookingWidget() {
 
   return (
     <>
-      <div id="pricing" className="relative z-30 max-w-4xl mx-auto -mt-32 md:-mt-40 px-4">
+      <div id="pricing" className="relative z-30 max-w-4xl mx-auto -mt-44 md:-mt-56 px-4">
         <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
           {/* Sliders row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {/* Bedrooms */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-semibold text-dark">Bedrooms:</span>
+                <span className="text-sm font-semibold text-dark">Bedrooms</span>
                 <span className="text-2xl font-bold text-green">{bedrooms}</span>
               </div>
               <input
@@ -41,7 +41,7 @@ export default function BookingWidget() {
             {/* Bathrooms */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-semibold text-dark">Bathrooms:</span>
+                <span className="text-sm font-semibold text-dark">Bathrooms</span>
                 <span className="text-2xl font-bold text-green">{bathrooms}</span>
               </div>
               <input
@@ -106,9 +106,9 @@ export default function BookingWidget() {
               onClick={() => setShowModal(true)}
               className="shrink-0 px-8 py-4 rounded-xl bg-green text-white font-bold text-base hover:bg-green-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
             >
-              Schedule appointment
+              Schedule your clean
               <span className="block text-sm font-normal opacity-90">
-                ${price}.00 per clean
+                ${price}.00 per visit
               </span>
             </button>
           </div>
