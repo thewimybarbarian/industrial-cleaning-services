@@ -27,7 +27,7 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/30 to-transparent" />
 
         {/* Text overlay */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pb-48 md:pb-16">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pb-40 md:pb-16">
           <h1
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-5 leading-[1.05] animate-fade-up drop-shadow-lg"
             style={{ fontFamily: "var(--font-poppins)" }}
@@ -44,7 +44,7 @@ export default function Home() {
             {["Book in 60 seconds", "Licensed & insured", "Satisfaction guaranteed"].map((text, i) => (
               <div key={text} className="flex items-center">
                 {i > 0 && <div className="hidden sm:block w-px h-5 bg-white/30 mx-5" />}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8A7A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A843" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span className="text-white/70 text-sm">{text}</span>
