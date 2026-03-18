@@ -27,7 +27,7 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/30 to-transparent" />
 
         {/* Text overlay */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pb-48 md:pb-16">
           <h1
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-5 leading-[1.05] animate-fade-up drop-shadow-lg"
             style={{ fontFamily: "var(--font-poppins)" }}
@@ -36,7 +36,7 @@ export default function Home() {
             <span className="text-gold drop-shadow-lg">our pride.</span>
           </h1>
 
-          <p className="text-white/80 text-lg md:text-xl mb-8 max-w-lg mx-auto animate-fade-up stagger-1">
+          <p className="text-white/80 text-base md:text-xl mb-5 md:mb-8 max-w-lg mx-auto animate-fade-up stagger-1">
             Trusted house cleaning for homes and businesses across the OKC metro.
           </p>
 

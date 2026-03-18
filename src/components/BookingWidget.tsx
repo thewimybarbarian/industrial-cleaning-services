@@ -14,8 +14,8 @@ export default function BookingWidget() {
 
   return (
     <>
-      <div id="pricing" className="relative z-30 max-w-4xl mx-auto -mt-44 md:-mt-56 px-4">
-        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+      <div id="pricing" className="relative z-30 max-w-4xl mx-auto -mt-28 md:-mt-56 px-4">
+        <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-10">
           {/* Sliders row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {/* Bedrooms */}
@@ -104,7 +104,7 @@ export default function BookingWidget() {
             {/* CTA */}
             <button
               onClick={() => setShowModal(true)}
-              className="shrink-0 px-8 py-4 rounded-xl bg-green text-white font-bold text-base hover:bg-green-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
+              className="w-full md:w-auto shrink-0 px-8 py-4 rounded-xl bg-green text-white font-bold text-base hover:bg-green-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
             >
               Schedule your clean
               <span className="block text-sm font-normal opacity-90">
