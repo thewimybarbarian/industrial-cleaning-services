@@ -66,7 +66,8 @@ export default function Reviews() {
   const doubled = [...reviews, ...reviews];
 
   return (
-    <section className="py-20 bg-gray-light overflow-hidden">
+    <section className="py-20 bg-gray-light overflow-hidden relative">
+      <div className="absolute inset-0 pattern-dots pointer-events-none" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="inline-block text-green text-sm font-semibold tracking-[0.2em] uppercase mb-3">

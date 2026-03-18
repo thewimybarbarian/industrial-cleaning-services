@@ -62,7 +62,7 @@ export default function Home() {
         <TrustBar />
       </div>
 
-      {/* Services */}
+      {/* Services (dark section) */}
       <ServicesSection />
 
       {/* How It Works */}
@@ -72,7 +72,7 @@ export default function Home() {
       <Reviews />
 
       {/* CTA Banner */}
-      <section className="py-20 px-6" style={{ background: "linear-gradient(135deg, #5B8A7A 0%, #4A7468 50%, #3D6459 100%)" }}>
+      <section className="py-20 px-6 relative overflow-hidden pattern-herringbone" style={{ background: "linear-gradient(135deg, #5B8A7A 0%, #4A7468 50%, #3D6459 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2
             className="text-3xl md:text-5xl font-bold text-white mb-4"

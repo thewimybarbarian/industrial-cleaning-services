@@ -124,7 +124,7 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section id="how-it-works" ref={sectionRef} className="py-24 px-6 bg-gray-light relative overflow-hidden">
+    <section id="how-it-works" ref={sectionRef} className="pt-32 md:pt-36 pb-24 px-6 bg-white relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-green/[0.03] pointer-events-none" />
 

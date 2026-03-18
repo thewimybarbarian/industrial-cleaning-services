@@ -68,23 +68,33 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="services" className="pt-24 pb-24 px-6 bg-dark relative">
+      {/* Wave top: white → dark */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]" style={{ transform: "translateY(-99%)" }}>
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full h-[60px] md:h-[80px]">
+          <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#2D2D2D" />
+        </svg>
+      </div>
+
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 pattern-crosshatch pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative">
         {/* Section header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-green text-sm font-semibold tracking-[0.2em] uppercase mb-3">
+          <span className="inline-block text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">
             What We Do
           </span>
           <h2
-            className="text-3xl md:text-5xl font-bold text-dark mb-5"
+            className="text-3xl md:text-5xl font-bold text-white mb-5"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
             We clean. You relax.
           </h2>
           <div className="flex items-center justify-center gap-2">
-            <div className="w-8 h-[2px] bg-green/30 rounded-full" />
+            <div className="w-8 h-[2px] bg-white/20 rounded-full" />
             <div className="w-16 h-[2px] bg-gold rounded-full" />
-            <div className="w-8 h-[2px] bg-green/30 rounded-full" />
+            <div className="w-8 h-[2px] bg-white/20 rounded-full" />
           </div>
         </div>
 
@@ -139,6 +149,13 @@ export default function ServicesSection() {
             </a>
           ))}
         </div>
+      </div>
+
+      {/* Wave bottom: dark → white */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]" style={{ transform: "translateY(99%)" }}>
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full h-[60px] md:h-[80px]">
+          <path d="M0,0 L0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,0 Z" fill="#2D2D2D" />
+        </svg>
       </div>
     </section>
   );
