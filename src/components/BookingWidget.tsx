@@ -14,7 +14,7 @@ export default function BookingWidget() {
 
   return (
     <>
-      <div id="pricing" className="relative z-30 max-w-4xl mx-auto -mt-16 px-4">
+      <div id="pricing" className="relative z-30 max-w-4xl mx-auto -mt-32 md:-mt-40 px-4">
         <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
           {/* Sliders row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
