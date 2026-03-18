@@ -13,41 +13,44 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-16">
-        <div className="text-center px-6 pt-12 pb-6">
+      <section className="relative pt-16 h-[85vh] md:h-[90vh] overflow-hidden">
+        {/* Full-bleed hero image */}
+        <Image
+          src="/hero3.jpeg"
+          alt="Beautiful clean living room"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/30 to-transparent" />
+
+        {/* Text overlay */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
           <h1
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-dark mb-5 leading-tight animate-fade-up"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-5 leading-[1.05] animate-fade-up drop-shadow-lg"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            We clean. <span className="text-green">You relax.</span>
+            Your home,<br />
+            <span className="text-gold drop-shadow-lg">our pride.</span>
           </h1>
 
-          <p className="text-dark/60 text-lg md:text-xl mb-6 max-w-lg mx-auto animate-fade-up stagger-1">
+          <p className="text-white/80 text-lg md:text-xl mb-8 max-w-lg mx-auto animate-fade-up stagger-1">
             Trusted house cleaning for homes and businesses across the OKC metro.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 animate-fade-up stagger-2">
             {["Book in 60 seconds", "Licensed & insured", "Satisfaction guaranteed"].map((text, i) => (
               <div key={text} className="flex items-center">
-                {i > 0 && <div className="hidden sm:block w-px h-5 bg-dark/15 mx-5" />}
+                {i > 0 && <div className="hidden sm:block w-px h-5 bg-white/30 mx-5" />}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8A7A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span className="text-dark/60 text-sm">{text}</span>
+                <span className="text-white/70 text-sm">{text}</span>
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[65vh] overflow-hidden">
-          <Image
-            src="/hero3.jpeg"
-            alt="Beautiful clean living room"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/10 to-transparent" />
         </div>
       </section>
 

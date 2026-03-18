@@ -24,7 +24,7 @@ export default function Navbar() {
               Industrial
             </span>
             <span className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "#5B8A7A" }}>
-              Cleaning Co.
+              Cleaning Services
             </span>
           </div>
         </a>

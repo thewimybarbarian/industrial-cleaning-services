@@ -61,7 +61,7 @@ export default function BookingWidget() {
 
           {/* Frequency options + CTA */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-            <div className="flex flex-wrap gap-3 flex-1 pt-3">
+            <div className="flex flex-wrap gap-3 flex-1 pt-5">
               {FREQUENCY_OPTIONS.map((opt) => (
                 <label
                   key={opt.id}

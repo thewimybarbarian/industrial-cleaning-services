@@ -2,27 +2,22 @@ const reviews = [
   {
     name: "John Cope",
     text: "They do an amazing job on our home every time it gets cleaned! We've been customers for almost 5 years and wouldn't recommend anyone else. Wonderful team and service!",
-    rating: 5,
   },
   {
     name: "Guillermo Alvarado M.",
     text: "Best in the business hands down. Nothing but the best quality in their service! If you're looking for a better service you're not going to find one. Highly recommended for your home or business.",
-    rating: 5,
   },
   {
     name: "Supriya Adams",
     text: "Awesome service! Have been using them for a long time. Very thorough and completely trustworthy. Can not think of a better company. 100% recommend.",
-    rating: 5,
   },
   {
     name: "Karen Mundee",
     text: "Great job. Good time management, and the result is always the same great! Thank you.",
-    rating: 5,
   },
   {
     name: "Fonda Lemons Nixon",
     text: "Best cleaning service! Started using last September and love them.",
-    rating: 5,
   },
 ];
 
@@ -48,10 +43,31 @@ function Initials({ name }: { name: string }) {
   );
 }
 
-export default function Reviews() {
+function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
   return (
-    <section className="py-20 px-6 bg-gray-light">
-      <div className="max-w-6xl mx-auto">
+    <div className="w-[340px] md:w-[380px] shrink-0 bg-white rounded-2xl p-6 shadow-sm">
+      <Stars />
+      <p className="text-dark/70 text-sm leading-relaxed mt-4 mb-5">
+        &ldquo;{review.text}&rdquo;
+      </p>
+      <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+        <Initials name={review.name} />
+        <div>
+          <p className="font-bold text-dark text-sm">{review.name}</p>
+          <p className="text-xs text-dark/40">Verified Customer</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Reviews() {
+  // Double the reviews for seamless loop
+  const doubled = [...reviews, ...reviews];
+
+  return (
+    <section className="py-20 bg-gray-light overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
           <span className="inline-block text-green text-sm font-semibold tracking-[0.2em] uppercase mb-3">
             Real Reviews
@@ -66,37 +82,35 @@ export default function Reviews() {
             Don&apos;t take our word for it &mdash; hear from the families and businesses we serve.
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.map((review) => (
-            <div
-              key={review.name}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <Stars />
-              <p className="text-dark/70 text-sm leading-relaxed mt-4 mb-5">
-                &ldquo;{review.text}&rdquo;
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <Initials name={review.name} />
-                <div>
-                  <p className="font-bold text-dark text-sm">{review.name}</p>
-                  <p className="text-xs text-dark/40">Verified Customer</p>
-                </div>
-              </div>
-            </div>
+      {/* Marquee container */}
+      <div className="relative group">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-light to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-light to-transparent z-10 pointer-events-none" />
+
+        {/* Scrolling strip */}
+        <div className="flex gap-6 animate-marquee group-hover:[animation-play-state:paused]">
+          {doubled.map((review, i) => (
+            <ReviewCard key={`${review.name}-${i}`} review={review} />
           ))}
         </div>
+      </div>
 
-        {/* Facebook badge */}
-        <div className="text-center mt-10">
-          <div className="inline-flex items-center gap-2 text-sm text-dark/50">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-            <span>Reviews sourced from our Facebook page</span>
-          </div>
-        </div>
+      {/* Facebook badge */}
+      <div className="text-center mt-10">
+        <a
+          href="https://www.facebook.com/profile.php?id=100091490116431"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-dark/50 hover:text-dark/70 transition-colors"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+          <span>Reviews sourced from our Facebook page</span>
+        </a>
       </div>
     </section>
   );
