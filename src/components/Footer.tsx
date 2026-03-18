@@ -5,7 +5,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2.5 mb-4">
-            <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="2" y="2" width="44" height="44" rx="12" fill="#5B8A7A" />
               <path d="M14 34 C14 34 14 18 30 12 C30 12 32 28 18 34" fill="#FAF8F5" opacity="0.9" />
               <path d="M14 34 C14 34 20 26 30 12" stroke="#4A7468" strokeWidth="1.5" fill="none" />
@@ -15,10 +15,10 @@ export default function Footer() {
               <circle cx="28" cy="20" r="0.8" fill="#D4A843" opacity="0.6" />
             </svg>
             <div className="flex flex-col leading-none">
-              <span className="text-[17px] font-bold text-white tracking-tight" style={{ fontFamily: "var(--font-poppins)" }}>
+              <span className="text-xl font-bold text-white tracking-tight" style={{ fontFamily: "var(--font-poppins)" }}>
                 Industrial
               </span>
-              <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-green">
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-green">
                 Cleaning Co.
               </span>
             </div>
