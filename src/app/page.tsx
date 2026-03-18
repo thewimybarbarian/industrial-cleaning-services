@@ -11,44 +11,42 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/hero2.jpeg"
-          alt="Beautiful clean living room"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Dark overlay + topo pattern */}
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 pattern-topo" />
-
-        {/* Hero content */}
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto pt-16">
+      <section className="relative pt-16">
+        {/* Top area — headline + checkmarks on light bg */}
+        <div className="bg-gray-light pattern-pinstripe text-center px-6 pt-12 pb-6">
           <h1
-            className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-fade-up"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-dark mb-5 leading-tight animate-fade-up"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
             House cleaning services in the{" "}
             <span className="text-green">OKC metro area</span>
           </h1>
 
-          <p className="text-white/80 text-lg md:text-xl mb-8 animate-fade-up stagger-1">
-            Professional cleaning you can trust. Book online in 60 seconds.
-          </p>
-
-          {/* Checkmarks */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 animate-fade-up stagger-2">
-            {["Select number of rooms", "See your price", "Schedule in 60 seconds"].map((text) => (
-              <div key={text} className="flex items-center gap-2">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          {/* Checkmarks row with dividers */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 animate-fade-up stagger-1">
+            {["Select number of rooms", "See your price", "Schedule in 60 seconds"].map((text, i) => (
+              <div key={text} className="flex items-center">
+                {i > 0 && <div className="hidden sm:block w-px h-5 bg-dark/15 mx-5" />}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span className="text-white/90 text-sm font-medium">{text}</span>
+                <span className="text-dark/60 text-sm italic">{text}</span>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Hero image — full width, no overlay */}
+        <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[65vh] overflow-hidden">
+          <Image
+            src="/hero2.jpeg"
+            alt="Beautiful clean living room"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Very subtle gradient at bottom for depth */}
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/10 to-transparent" />
         </div>
       </section>
 
