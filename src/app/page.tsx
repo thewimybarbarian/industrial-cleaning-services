@@ -27,7 +27,7 @@ export default function Home() {
             {["Select number of rooms", "See your price", "Schedule in 60 seconds"].map((text, i) => (
               <div key={text} className="flex items-center">
                 {i > 0 && <div className="hidden sm:block w-px h-5 bg-dark/15 mx-5" />}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8A7A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span className="text-dark/60 text-sm italic">{text}</span>
@@ -77,7 +77,7 @@ export default function Home() {
                 title: "Standard Clean",
                 desc: "Thorough cleaning of all rooms, dusting, vacuuming, mopping, and sanitizing bathrooms & kitchen.",
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B8A7A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     <polyline points="9 22 9 12 15 12 15 22" />
                   </svg>
@@ -87,7 +87,7 @@ export default function Home() {
                 title: "Deep Clean",
                 desc: "Everything in Standard plus inside appliances, baseboards, window sills, and detailed scrubbing.",
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B8A7A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <path d="M8 14s1.5 2 4 2 4-2 4-2" />
                     <line x1="9" y1="9" x2="9.01" y2="9" />
@@ -99,7 +99,7 @@ export default function Home() {
                 title: "Move In/Out",
                 desc: "Comprehensive top-to-bottom cleaning for empty homes. Perfect for getting your deposit back.",
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B8A7A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="1" y="3" width="15" height="13" />
                     <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
                     <circle cx="5.5" cy="18.5" r="2.5" />
@@ -111,7 +111,7 @@ export default function Home() {
                 title: "Office Cleaning",
                 desc: "Keep your workspace professional and hygienic. Flexible scheduling around your business hours.",
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B8A7A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                   </svg>
@@ -137,7 +137,7 @@ export default function Home() {
       <HowItWorks />
 
       {/* CTA Banner */}
-      <section className="py-20 px-6 bg-green">
+      <section className="py-20 px-6" style={{ background: "linear-gradient(135deg, #5B8A7A 0%, #4A7468 50%, #3D6459 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2
             className="text-3xl md:text-5xl font-bold text-white mb-4"
@@ -150,7 +150,8 @@ export default function Home() {
           </p>
           <a
             href="#pricing"
-            className="inline-block px-10 py-4 rounded-full bg-white text-green font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+            className="inline-block px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+            style={{ backgroundColor: "#D4A843", color: "#fff" }}
           >
             Get Your Price →
           </a>

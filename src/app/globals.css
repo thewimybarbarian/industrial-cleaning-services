@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --green: #2ECC71;
-  --green-dark: #27AE60;
-  --dark: #2C3E50;
-  --gray-light: #F5F5F5;
-  --gold: #F1C40F;
-  --text-muted: #7F8C8D;
+  --green: #5B8A7A;
+  --green-dark: #4A7468;
+  --dark: #2D2D2D;
+  --gray-light: #F8F5F1;
+  --gold: #D4A843;
+  --terracotta: #D4734A;
+  --text-muted: #8A8580;
+  --warm-white: #FAF8F5;
 }
 
 @theme inline {
@@ -15,13 +17,15 @@
   --color-dark: var(--dark);
   --color-gray-light: var(--gray-light);
   --color-gold: var(--gold);
+  --color-terracotta: var(--terracotta);
   --color-text-muted: var(--text-muted);
+  --color-warm-white: var(--warm-white);
   --font-sans: var(--font-inter);
   --font-heading: var(--font-poppins);
 }
 
 body {
-  background: #ffffff;
+  background: var(--warm-white);
   color: var(--dark);
   font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
@@ -100,8 +104,8 @@ html {
     135deg,
     transparent,
     transparent 20px,
-    rgba(46, 204, 113, 0.03) 20px,
-    rgba(46, 204, 113, 0.03) 21px
+    rgba(91, 138, 122, 0.03) 20px,
+    rgba(91, 138, 122, 0.03) 21px
   );
 }
 
@@ -118,7 +122,7 @@ html {
 
 /* Soft radial dots — gray sections */
 .pattern-dots {
-  background-image: radial-gradient(circle, rgba(46, 204, 113, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(91, 138, 122, 0.06) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -156,12 +160,12 @@ html {
 /* Hex grid — footer */
 .pattern-hex {
   background-image:
-    linear-gradient(30deg, rgba(46,204,113,0.06) 12%, transparent 12.5%, transparent 87%, rgba(46,204,113,0.06) 87.5%, rgba(46,204,113,0.06)),
-    linear-gradient(150deg, rgba(46,204,113,0.06) 12%, transparent 12.5%, transparent 87%, rgba(46,204,113,0.06) 87.5%, rgba(46,204,113,0.06)),
-    linear-gradient(30deg, rgba(46,204,113,0.06) 12%, transparent 12.5%, transparent 87%, rgba(46,204,113,0.06) 87.5%, rgba(46,204,113,0.06)),
-    linear-gradient(150deg, rgba(46,204,113,0.06) 12%, transparent 12.5%, transparent 87%, rgba(46,204,113,0.06) 87.5%, rgba(46,204,113,0.06)),
-    linear-gradient(60deg, rgba(46,204,113,0.04) 25%, transparent 25.5%, transparent 75%, rgba(46,204,113,0.04) 75%, rgba(46,204,113,0.04)),
-    linear-gradient(60deg, rgba(46,204,113,0.04) 25%, transparent 25.5%, transparent 75%, rgba(46,204,113,0.04) 75%, rgba(46,204,113,0.04));
+    linear-gradient(30deg, rgba(91,138,122,0.06) 12%, transparent 12.5%, transparent 87%, rgba(91,138,122,0.06) 87.5%, rgba(91,138,122,0.06)),
+    linear-gradient(150deg, rgba(91,138,122,0.06) 12%, transparent 12.5%, transparent 87%, rgba(91,138,122,0.06) 87.5%, rgba(91,138,122,0.06)),
+    linear-gradient(30deg, rgba(91,138,122,0.06) 12%, transparent 12.5%, transparent 87%, rgba(91,138,122,0.06) 87.5%, rgba(91,138,122,0.06)),
+    linear-gradient(150deg, rgba(91,138,122,0.06) 12%, transparent 12.5%, transparent 87%, rgba(91,138,122,0.06) 87.5%, rgba(91,138,122,0.06)),
+    linear-gradient(60deg, rgba(91,138,122,0.04) 25%, transparent 25.5%, transparent 75%, rgba(91,138,122,0.04) 75%, rgba(91,138,122,0.04)),
+    linear-gradient(60deg, rgba(91,138,122,0.04) 25%, transparent 25.5%, transparent 75%, rgba(91,138,122,0.04) 75%, rgba(91,138,122,0.04));
   background-size: 56px 98px;
   background-position: 0 0, 0 0, 28px 49px, 28px 49px, 0 0, 28px 49px;
 }
@@ -186,14 +190,14 @@ html {
 /* Gradient mesh glow for depth */
 .pattern-glow-green {
   background-image:
-    radial-gradient(ellipse at 10% 0%, rgba(46, 204, 113, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 100%, rgba(46, 204, 113, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 10% 0%, rgba(91, 138, 122, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 100%, rgba(91, 138, 122, 0.06) 0%, transparent 50%);
 }
 
 .pattern-glow-dark {
   background-image:
-    radial-gradient(ellipse at 0% 50%, rgba(46, 204, 113, 0.1) 0%, transparent 40%),
-    radial-gradient(ellipse at 100% 0%, rgba(39, 174, 96, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 0% 50%, rgba(91, 138, 122, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 0%, rgba(74, 116, 104, 0.06) 0%, transparent 50%);
 }
 
 /* Section divider — soft wave */
@@ -207,7 +211,7 @@ html {
   left: 0;
   width: 100%;
   height: 60px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z' fill='%23F5F5F5'/%3E%3C/svg%3E") no-repeat bottom center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z' fill='%23F8F5F1'/%3E%3C/svg%3E") no-repeat bottom center;
   background-size: 100% 100%;
   pointer-events: none;
   z-index: 10;
@@ -219,11 +223,11 @@ html {
 }
 
 .divider-wave-green::after {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z' fill='%232ECC71'/%3E%3C/svg%3E") no-repeat bottom center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z' fill='%235B8A7A'/%3E%3C/svg%3E") no-repeat bottom center;
   background-size: 100% 100%;
 }
 
 .divider-wave-dark::after {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z' fill='%232C3E50'/%3E%3C/svg%3E") no-repeat bottom center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z' fill='%232D2D2D'/%3E%3C/svg%3E") no-repeat bottom center;
   background-size: 100% 100%;
 }
