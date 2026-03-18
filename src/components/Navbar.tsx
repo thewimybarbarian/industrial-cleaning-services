@@ -9,16 +9,28 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-green flex items-center justify-center">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
+        <a href="#" className="flex items-center gap-2.5">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Rounded square background */}
+            <rect x="2" y="2" width="44" height="44" rx="12" fill="#5B8A7A" />
+            {/* Leaf shape — clean/eco/fresh */}
+            <path d="M14 34 C14 34 14 18 30 12 C30 12 32 28 18 34" fill="#FAF8F5" opacity="0.9" />
+            <path d="M14 34 C14 34 20 26 30 12" stroke="#4A7468" strokeWidth="1.5" fill="none" />
+            {/* Sparkle — clean/shine accent */}
+            <circle cx="34" cy="14" r="1.5" fill="#D4A843" />
+            <line x1="34" y1="10" x2="34" y2="18" stroke="#D4A843" strokeWidth="1" strokeLinecap="round" />
+            <line x1="30" y1="14" x2="38" y2="14" stroke="#D4A843" strokeWidth="1" strokeLinecap="round" />
+            {/* Small sparkle */}
+            <circle cx="28" cy="20" r="0.8" fill="#D4A843" opacity="0.6" />
+          </svg>
+          <div className="flex flex-col leading-none">
+            <span className="text-[17px] font-bold text-dark tracking-tight" style={{ fontFamily: "var(--font-poppins)" }}>
+              Industrial
+            </span>
+            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: "#5B8A7A" }}>
+              Cleaning Co.
+            </span>
           </div>
-          <span className="text-lg font-bold text-dark" style={{ fontFamily: "var(--font-poppins)" }}>
-            Industrial Cleaning
-          </span>
         </a>
 
         {/* Desktop links */}
