@@ -13,7 +13,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-16">
         {/* Top area — headline + checkmarks on light bg */}
-        <div className="bg-gray-light text-center px-6 pt-12 pb-6">
+        <div className="text-center px-6 pt-12 pb-6">
           <h1
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-dark mb-5 leading-tight animate-fade-up"
             style={{ fontFamily: "var(--font-poppins)" }}
