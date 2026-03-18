@@ -13,7 +13,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-16">
         {/* Top area — headline + checkmarks on light bg */}
-        <div className="bg-gray-light pattern-pinstripe text-center px-6 pt-12 pb-6">
+        <div className="bg-gray-light text-center px-6 pt-12 pb-6">
           <h1
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-dark mb-5 leading-tight animate-fade-up"
             style={{ fontFamily: "var(--font-poppins)" }}
@@ -54,12 +54,12 @@ export default function Home() {
       <BookingWidget />
 
       {/* Trust Bar */}
-      <div className="pt-8 pattern-pinstripe">
+      <div className="pt-8">
         <TrustBar />
       </div>
 
       {/* Services Section */}
-      <section id="services" className="relative py-20 px-6 bg-white pattern-diamonds pattern-glow-green divider-wave">
+      <section id="services" className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-5xl font-bold text-center text-dark mb-4"
@@ -137,7 +137,7 @@ export default function Home() {
       <HowItWorks />
 
       {/* CTA Banner */}
-      <section className="relative py-20 px-6 bg-green pattern-herringbone pattern-circles divider-wave divider-wave-dark overflow-hidden">
+      <section className="py-20 px-6 bg-green">
         <div className="max-w-3xl mx-auto text-center">
           <h2
             className="text-3xl md:text-5xl font-bold text-white mb-4"
