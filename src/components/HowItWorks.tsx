@@ -4,7 +4,7 @@ const steps = [
   {
     title: "Book",
     description: "Select your options and schedule online in under 60 seconds.",
-    image: "/dining.jpg",
+    image: "/dingin2.jpeg",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -17,7 +17,7 @@ const steps = [
   {
     title: "Clean",
     description: "Our professional team arrives and handles everything top to bottom.",
-    image: "/kitchen.jpg",
+    image: "/kitchen2.png",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -28,7 +28,7 @@ const steps = [
   {
     title: "Relax",
     description: "Come home to a spotless house. It's that simple.",
-    image: "/bathroom.jpg",
+    image: "/bathroom2.png",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -39,7 +39,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 px-6 bg-gray-light">
+    <section id="how-it-works" className="relative py-20 px-6 bg-gray-light pattern-dots pattern-glow-green divider-wave divider-wave-green">
       <div className="max-w-6xl mx-auto">
         <h2
           className="text-3xl md:text-5xl font-bold text-center text-dark mb-4"

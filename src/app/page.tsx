@@ -14,14 +14,15 @@ export default function Home() {
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background image */}
         <Image
-          src="/hero.jpg"
+          src="/hero2.jpeg"
           alt="Beautiful clean living room"
           fill
           className="object-cover"
           priority
         />
-        {/* Dark overlay */}
+        {/* Dark overlay + topo pattern */}
         <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 pattern-topo" />
 
         {/* Hero content */}
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto pt-16">
@@ -55,12 +56,12 @@ export default function Home() {
       <BookingWidget />
 
       {/* Trust Bar */}
-      <div className="pt-8">
+      <div className="pt-8 pattern-pinstripe">
         <TrustBar />
       </div>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-white">
+      <section id="services" className="relative py-20 px-6 bg-white pattern-diamonds pattern-glow-green divider-wave">
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-5xl font-bold text-center text-dark mb-4"
@@ -138,7 +139,7 @@ export default function Home() {
       <HowItWorks />
 
       {/* CTA Banner */}
-      <section className="py-20 px-6 bg-green">
+      <section className="relative py-20 px-6 bg-green pattern-herringbone divider-wave divider-wave-dark">
         <div className="max-w-3xl mx-auto text-center">
           <h2
             className="text-3xl md:text-5xl font-bold text-white mb-4"
