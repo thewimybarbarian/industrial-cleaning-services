@@ -39,7 +39,7 @@ export default function Home() {
         {/* Hero image — full width, no overlay */}
         <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[65vh] overflow-hidden">
           <Image
-            src="/hero2.jpeg"
+            src="/hero3.jpeg"
             alt="Beautiful clean living room"
             fill
             className="object-cover"
@@ -137,7 +137,7 @@ export default function Home() {
       <HowItWorks />
 
       {/* CTA Banner */}
-      <section className="relative py-20 px-6 bg-green pattern-herringbone divider-wave divider-wave-dark">
+      <section className="relative py-20 px-6 bg-green pattern-herringbone pattern-circles divider-wave divider-wave-dark overflow-hidden">
         <div className="max-w-3xl mx-auto text-center">
           <h2
             className="text-3xl md:text-5xl font-bold text-white mb-4"
