@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-16 h-[85vh] md:h-[90vh] overflow-hidden">
+      <section className="relative pt-20 h-[85vh] md:h-[90vh] overflow-hidden">
         {/* Full-bleed hero image */}
         <Image
           src="/hero3.jpeg"
@@ -24,7 +24,8 @@ export default function Home() {
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/30 to-transparent" />
+        {/* Fade hero photo into dark background below */}
+        <div className="absolute inset-x-0 bottom-0 h-64" style={{ background: "linear-gradient(to bottom, transparent 0%, #2D2D2D 100%)" }} />
 
         {/* Text overlay */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pb-40 md:pb-16">
@@ -32,12 +33,12 @@ export default function Home() {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-5 leading-[1.05] animate-fade-up drop-shadow-lg"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            Your home,<br />
-            <span className="text-gold drop-shadow-lg">our pride.</span>
+            A cleaner space<br />
+            <span className="text-gold drop-shadow-lg">awaits.</span>
           </h1>
 
           <p className="text-white/80 text-base md:text-xl mb-5 md:mb-8 max-w-lg mx-auto animate-fade-up stagger-1">
-            Trusted house cleaning for homes and businesses across the OKC metro.
+            OKC&apos;s trusted residential &amp; commercial cleaning service.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 animate-fade-up stagger-2">
@@ -55,7 +56,25 @@ export default function Home() {
       </section>
 
       {/* Booking Widget */}
-      <BookingWidget />
+      <div className="bg-dark pb-16">
+        <BookingWidget />
+      </div>
+
+      {/* Scrolling Marquee Banner */}
+      <div className="bg-green overflow-hidden py-3">
+        <div className="flex whitespace-nowrap animate-marquee">
+          {[...Array(2)].map((_, setIdx) => (
+            <div key={setIdx} className="flex shrink-0">
+              {["RESIDENTIAL CLEANING", "COMMERCIAL CLEANING", "LICENSED & INSURED", "OKC METRO", "SATISFACTION GUARANTEED", "BOOK IN 60 SECONDS"].map((text, i) => (
+                <span key={i} className="mx-8 text-sm font-bold tracking-widest text-white flex items-center gap-8">
+                  {text}
+                  <span className="text-gold">&#9670;</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Trust Bar */}
       <div className="pt-8">
@@ -78,7 +97,7 @@ export default function Home() {
             className="text-3xl md:text-5xl font-bold text-white mb-4"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            Your home deserves it.
+            Your space deserves it.
           </h2>
           <p className="text-white/80 text-lg mb-8">
             Book your first cleaning today and save 20% with a weekly plan.

@@ -5,8 +5,21 @@ import type { FrequencyId } from "@/lib/pricing";
 import { FREQUENCY_OPTIONS } from "@/lib/pricing";
 
 interface Props {
+  bookingType: "residential" | "commercial";
   bedrooms: number;
   bathrooms: number;
+  livingRooms: number;
+  diningRooms: number;
+  offices: number;
+  stories: "single" | "two";
+  hasPets: boolean;
+  specialNotes: string;
+  commOffices: number;
+  commRestrooms: number;
+  commFloors: number;
+  commBreakRooms: number;
+  commConferenceRooms: number;
+  commSqft: string;
   frequency: FrequencyId;
   price: number;
   onClose: () => void;
@@ -17,7 +30,26 @@ const TIME_SLOTS = [
   "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM",
 ];
 
-export default function ScheduleModal({ bedrooms, bathrooms, frequency, price, onClose }: Props) {
+export default function ScheduleModal({
+  bookingType,
+  bedrooms,
+  bathrooms,
+  livingRooms,
+  diningRooms,
+  offices,
+  stories,
+  hasPets,
+  specialNotes,
+  commOffices,
+  commRestrooms,
+  commFloors,
+  commBreakRooms,
+  commConferenceRooms,
+  commSqft,
+  frequency,
+  price,
+  onClose,
+}: Props) {
   const [step, setStep] = useState(1);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -28,12 +60,50 @@ export default function ScheduleModal({ bedrooms, bathrooms, frequency, price, o
     address: "",
     city: "",
     zip: "",
-    notes: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const freqLabel = FREQUENCY_OPTIONS.find((o) => o.id === frequency)?.label ?? "";
+  const isCommercial = bookingType === "commercial";
+
+  // Build summary parts
+  let summaryLine: string;
+  let detailLines: { label: string; value: string }[];
+
+  if (isCommercial) {
+    const parts = [
+      commOffices > 0 ? `${commOffices} office${commOffices !== 1 ? "s" : ""}` : null,
+      commRestrooms > 0 ? `${commRestrooms} restroom${commRestrooms !== 1 ? "s" : ""}` : null,
+      commFloors > 0 ? `${commFloors} floor${commFloors !== 1 ? "s" : ""}` : null,
+      commBreakRooms > 0 ? `${commBreakRooms} break room${commBreakRooms !== 1 ? "s" : ""}` : null,
+      commConferenceRooms > 0 ? `${commConferenceRooms} conf. room${commConferenceRooms !== 1 ? "s" : ""}` : null,
+    ].filter(Boolean);
+    summaryLine = parts.join(" / ") || "Commercial space";
+    detailLines = [
+      { label: "Type", value: "Commercial" },
+      { label: "Facility", value: summaryLine },
+      ...(commSqft ? [{ label: "Sq. Ft.", value: Number(commSqft).toLocaleString() }] : []),
+      { label: "Frequency", value: freqLabel },
+    ];
+  } else {
+    const roomParts = [
+      `${bedrooms} bed`,
+      `${bathrooms} bath`,
+      livingRooms > 0 ? `${livingRooms} living` : null,
+      diningRooms > 0 ? `${diningRooms} dining` : null,
+      offices > 0 ? `${offices} office` : null,
+    ].filter(Boolean);
+    const storiesLabel = stories === "two" ? "Two Story" : "Single Story";
+    const petsLabel = hasPets ? "Yes" : "No";
+    summaryLine = roomParts.join(" / ");
+    detailLines = [
+      { label: "Type", value: "Residential" },
+      { label: "Rooms", value: summaryLine },
+      { label: "Home", value: `${storiesLabel} · Pets: ${petsLabel}` },
+      { label: "Frequency", value: freqLabel },
+    ];
+  }
 
   const handleSubmit = async () => {
     setSubmitting(true);
@@ -42,8 +112,21 @@ export default function ScheduleModal({ bedrooms, bathrooms, frequency, price, o
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          bookingType,
           bedrooms,
           bathrooms,
+          livingRooms,
+          diningRooms,
+          offices,
+          stories,
+          hasPets,
+          specialNotes,
+          commOffices,
+          commRestrooms,
+          commFloors,
+          commBreakRooms,
+          commConferenceRooms,
+          commSqft,
           frequency,
           scheduledDate: date,
           scheduledTime: time,
@@ -97,8 +180,9 @@ export default function ScheduleModal({ bedrooms, bathrooms, frequency, price, o
               <div className="bg-gray-light rounded-xl p-4 text-left text-sm space-y-1">
                 <p><strong>Date:</strong> {date}</p>
                 <p><strong>Time:</strong> {time}</p>
-                <p><strong>Home:</strong> {bedrooms} bed / {bathrooms} bath &middot; {freqLabel}</p>
-                <p><strong>Price:</strong> ${price}.00 per visit</p>
+                {detailLines.map((d) => (
+                  <p key={d.label}><strong>{d.label}:</strong> {d.value}</p>
+                ))}
               </div>
               <button
                 onClick={onClose}
@@ -110,10 +194,12 @@ export default function ScheduleModal({ bedrooms, bathrooms, frequency, price, o
           ) : step === 1 ? (
             <>
               <div className="bg-gray-light rounded-xl p-4 mb-6 text-sm text-dark/80">
-                <span className="font-bold">{bedrooms} bed</span> &middot;{" "}
-                <span className="font-bold">{bathrooms} bath</span> &middot;{" "}
-                <span className="font-bold">{freqLabel}</span> &middot;{" "}
-                <span className="font-bold text-green">${price}/visit</span>
+                {detailLines.map((d, i) => (
+                  <span key={d.label}>
+                    {i > 0 && " · "}
+                    <span className="font-bold">{d.value}</span>
+                  </span>
+                ))}
               </div>
 
               <label className="block mb-1 text-sm font-semibold text-dark">Preferred Date</label>
@@ -227,23 +313,16 @@ export default function ScheduleModal({ bedrooms, bathrooms, frequency, price, o
                     />
                   </div>
                 </div>
-
-                <div>
-                  <label className="block mb-1 text-sm font-semibold text-dark">Anything we should know?</label>
-                  <textarea
-                    value={form.notes}
-                    onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                    rows={3}
-                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green/40 focus:border-green resize-none"
-                    placeholder="Gate code, pets, areas to focus on..."
-                  />
-                </div>
               </div>
 
               <div className="bg-gray-light rounded-xl p-4 mt-6 text-sm space-y-1">
                 <p className="text-dark/70"><strong>Date:</strong> {date} at {time}</p>
-                <p className="text-dark/70"><strong>Home:</strong> {bedrooms} bed / {bathrooms} bath</p>
-                <p className="text-lg font-bold text-green">${price}.00 per visit</p>
+                {detailLines.map((d) => (
+                  <p key={d.label} className="text-dark/70"><strong>{d.label}:</strong> {d.value}</p>
+                ))}
+                {specialNotes && (
+                  <p className="text-dark/70"><strong>Notes:</strong> {specialNotes}</p>
+                )}
               </div>
 
               <button
@@ -251,7 +330,7 @@ export default function ScheduleModal({ bedrooms, bathrooms, frequency, price, o
                 disabled={submitting || !form.customerName || !form.email || !form.phone || !form.address || !form.city || !form.zip}
                 className="w-full mt-6 py-3.5 rounded-xl bg-green text-white font-bold hover:bg-green-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-lg"
               >
-                {submitting ? "Booking..." : "Confirm Booking"}
+                {submitting ? "Submitting..." : "Schedule Estimate"}
               </button>
             </>
           )}

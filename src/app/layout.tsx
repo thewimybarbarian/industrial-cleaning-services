@@ -38,6 +38,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/ics-icon-1.png" type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/ics-icon-1.png" />
+      </head>
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
         {children}
       </body>

@@ -96,6 +96,16 @@ html {
 .stagger-2 { animation-delay: 0.2s; }
 .stagger-3 { animation-delay: 0.3s; }
 
+/* Service detail panel expand */
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-12px); max-height: 0; }
+  to { opacity: 1; transform: translateY(0); max-height: 2000px; }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.4s ease-out both;
+}
+
 /* Infinite marquee scroll */
 @keyframes marquee {
   0% { transform: translateX(0); }
@@ -103,7 +113,13 @@ html {
 }
 
 .animate-marquee {
-  animation: marquee 35s linear infinite;
+  animation: marquee 8s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .animate-marquee {
+    animation: marquee 18s linear infinite;
+  }
 }
 
 /* Slow pulse for icon backgrounds */
@@ -250,4 +266,11 @@ html {
 .divider-wave-dark::after {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z' fill='%232D2D2D'/%3E%3C/svg%3E") no-repeat bottom center;
   background-size: 100% 100%;
+}
+
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white !important; }
+  main { padding: 0 !important; }
 }

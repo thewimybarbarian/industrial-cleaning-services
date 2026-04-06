@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const steps = [
   {
@@ -124,9 +125,17 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section id="how-it-works" ref={sectionRef} className="pt-32 md:pt-36 pb-24 px-6 bg-white relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-green/[0.03] pointer-events-none" />
+    <section id="how-it-works" ref={sectionRef} className="pt-32 md:pt-36 pb-24 px-6 relative overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/dining3.jpeg"
+        alt=""
+        fill
+        className="object-cover"
+        priority={false}
+      />
+      {/* White overlay for readability */}
+      <div className="absolute inset-0 bg-white/85" />
 
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-16">
