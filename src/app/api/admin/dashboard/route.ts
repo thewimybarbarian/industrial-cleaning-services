@@ -80,7 +80,8 @@ export async function GET() {
       upcomingThisWeek,
     });
   } catch (error) {
-    console.error("Dashboard error:", error);
-    return NextResponse.json({ error: "Failed to load dashboard" }, { status: 500 });
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Dashboard error:", message);
+    return NextResponse.json({ error: "Failed to load dashboard", detail: message }, { status: 500 });
   }
 }
