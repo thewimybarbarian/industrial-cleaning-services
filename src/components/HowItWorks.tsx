@@ -7,7 +7,7 @@ const steps = [
   {
     num: "01",
     title: "Book",
-    description: "Pick your rooms, choose a time, and you're done. Takes less than 60 seconds.",
+    description: "Pick your service, choose a time, and you're done. Takes less than 60 seconds.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -22,22 +22,23 @@ const steps = [
   },
   {
     num: "02",
-    title: "We Clean",
-    description: "Our team shows up on time, fully equipped, and handles everything top to bottom.",
+    title: "Confirm",
+    description: "We'll reach out to confirm your details, schedule, and any special requests.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-        <polyline points="9 22 9 12 15 12 15 22" />
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
       </svg>
     ),
   },
   {
     num: "03",
-    title: "You Relax",
-    description: "Come home to a spotless house. That's it. Simple as it should be.",
+    title: "We Clean",
+    description: "Our team shows up on time, fully equipped, and leaves your space spotless.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
       </svg>
     ),
   },
