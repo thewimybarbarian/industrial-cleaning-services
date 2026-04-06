@@ -382,6 +382,66 @@ const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
   },
+
+  airbnb: {
+    intro:
+      "Fast, thorough turnovers between guests so you never miss a booking.",
+    categories: [
+      {
+        icon: "🛏️",
+        title: "Bedrooms & Living Areas",
+        items: [
+          "Dusting all surfaces",
+          "Vacuuming carpets and rugs",
+          "Sweeping & mopping floors",
+          "Making beds with fresh linens",
+          "Cleaning mirrors",
+        ],
+      },
+      {
+        icon: "🍽️",
+        title: "Kitchen",
+        items: [
+          "Cleaning countertops and backsplash",
+          "Washing dishes left behind",
+          "Cleaning sink & faucet",
+          "Cleaning inside microwave",
+          "Exterior cleaning of appliances",
+          "Restocking supplies (if provided)",
+        ],
+      },
+      {
+        icon: "🚿",
+        title: "Bathrooms",
+        items: [
+          "Deep cleaning toilets, showers, and tubs",
+          "Cleaning sinks, mirrors, and countertops",
+          "Replacing towels and toiletries",
+          "Disinfecting all surfaces",
+        ],
+      },
+      {
+        icon: "✨",
+        title: "Guest-Ready Touches",
+        items: [
+          "Emptying all trash bins",
+          "Checking for lost items",
+          "Staging welcome amenities",
+          "Final walkthrough inspection",
+        ],
+      },
+    ],
+    footer: {
+      icon: "🕐",
+      title: "Turnover Options",
+      items: [
+        "Same-day turnovers",
+        "Recurring schedule",
+        "Last-minute availability",
+        "Key/lockbox access",
+      ],
+    },
+  },
 };
 
 /* ─── Detail Panel Component ─── */

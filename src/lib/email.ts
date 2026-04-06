@@ -73,6 +73,9 @@ export async function sendBookingConfirmation(customer: EmailCustomer, booking: 
             </table>
           </div>
           ${booking.notes ? `<p style="color: #8A8580; font-size: 13px; margin: 0 0 24px; white-space: pre-line;"><strong>Property Details:</strong><br/>${booking.notes}</p>` : ""}
+          <div style="text-align: center; margin: 0 0 24px;">
+            <a href="mailto:Industrialcleaningservices00@gmail.com?subject=Reschedule%20Request%20-%20Booking%20${booking.id}&body=Hi%2C%20I%20would%20like%20to%20reschedule%20my%20cleaning%20on%20${encodeURIComponent(booking.scheduled_date)}%20at%20${encodeURIComponent(booking.scheduled_time)}.%0A%0ANew%20preferred%20date%2Ftime%3A%20" style="display: inline-block; background: #D4A843; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600;">Need to Reschedule?</a>
+          </div>
           <p style="color: #8A8580; font-size: 14px; margin: 0;">Questions? Call us at <strong style="color: #2D2D2D;">(405) 250-9185</strong></p>
         </div>
         <div style="background: #2D2D2D; padding: 20px 24px; text-align: center;">
@@ -84,7 +87,7 @@ export async function sendBookingConfirmation(customer: EmailCustomer, booking: 
 }
 
 export async function sendAdminNotification(customer: EmailCustomer, booking: EmailBooking) {
-  const adminEmail = process.env.ADMIN_EMAIL;
+  const adminEmail = process.env.ADMIN_EMAIL || "Industrialcleaningservices00@gmail.com";
   if (!adminEmail) return;
 
   await getResend().emails.send({

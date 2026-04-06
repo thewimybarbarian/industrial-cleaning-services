@@ -79,9 +79,14 @@ export default function Footer() {
           </a>
         </div>
 
-        <span className="text-xs text-white/40">
-          &copy; {new Date().getFullYear()} Industrial Cleaning Services All rights reserved.
-        </span>
+        <div className="flex flex-col items-center md:items-end gap-1">
+          <span className="text-xs text-white/40">
+            &copy; {new Date().getFullYear()} Industrial Cleaning Services. All rights reserved.
+          </span>
+          <span className="text-[10px] text-white/25">
+            Powered by Avexis&trade;
+          </span>
+        </div>
       </div>
     </footer>
   );
