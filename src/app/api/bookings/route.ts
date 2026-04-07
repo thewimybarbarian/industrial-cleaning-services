@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { calculatePrice, type FrequencyId } from "@/lib/pricing";
 import { sendBookingConfirmation, sendAdminNotification } from "@/lib/email";
+import { sendAdminBookingSMS } from "@/lib/sms";
 
 function buildResidentialNotes({
   livingRooms,
@@ -151,14 +152,16 @@ export async function POST(request: Request) {
 
     if (bookingError) throw bookingError;
 
-    // Send emails (non-blocking)
+    // Send notifications (non-blocking)
     Promise.allSettled([
       sendBookingConfirmation(customer, booking),
       sendAdminNotification(customer, booking),
+      sendAdminBookingSMS(customer, booking),
     ]).then((results) => {
+      const labels = ["Customer email", "Admin email", "Admin SMS"];
       results.forEach((r, i) => {
         if (r.status === "rejected") {
-          console.error(`Email ${i} failed:`, r.reason);
+          console.error(`${labels[i]} failed:`, r.reason);
         }
       });
     });
