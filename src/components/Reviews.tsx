@@ -70,6 +70,11 @@ export default function Reviews() {
       <div className="absolute inset-0 pattern-dots pointer-events-none" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
+          <img
+            src="/powered-2.png"
+            alt="Powered by Avexis"
+            className="mx-auto mb-6 h-12 md:h-14 w-auto"
+          />
           <span className="inline-block text-green text-sm font-semibold tracking-[0.2em] uppercase mb-3">
             Real Reviews
           </span>
