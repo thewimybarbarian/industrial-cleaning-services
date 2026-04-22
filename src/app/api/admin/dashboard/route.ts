@@ -80,8 +80,12 @@ export async function GET() {
       upcomingThisWeek,
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unknown error";
-    console.error("Dashboard error:", message);
-    return NextResponse.json({ error: "Failed to load dashboard", detail: message }, { status: 500 });
+    const err = error as { message?: string; code?: string; hint?: string; details?: string };
+    const message = err?.message || (typeof error === "string" ? error : JSON.stringify(error));
+    console.error("Dashboard error:", { message, code: err?.code, hint: err?.hint, details: err?.details });
+    return NextResponse.json(
+      { error: "Failed to load dashboard", detail: message, code: err?.code, hint: err?.hint },
+      { status: 500 }
+    );
   }
 }
