@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { calculatePrice, type FrequencyId } from "@/lib/pricing";
 import { sendBookingConfirmation, sendAdminNotification } from "@/lib/email";
-import { sendAdminBookingSMS } from "@/lib/sms";
 
 function buildResidentialNotes({
   livingRooms,
@@ -152,13 +151,16 @@ export async function POST(request: Request) {
 
     if (bookingError) throw bookingError;
 
-    // Send notifications (non-blocking)
+    // Send notifications (non-blocking).
+    // Admin SMS removed: US carriers block A2P traffic from unregistered
+    // 10DLC numbers (Twilio error 30034). Admin relies on email push
+    // notifications instead. To re-enable, register the Twilio number
+    // with The Campaign Registry and restore sendAdminBookingSMS.
     Promise.allSettled([
       sendBookingConfirmation(customer, booking),
       sendAdminNotification(customer, booking),
-      sendAdminBookingSMS(customer, booking),
     ]).then((results) => {
-      const labels = ["Customer email", "Admin email", "Admin SMS"];
+      const labels = ["Customer email", "Admin email"];
       results.forEach((r, i) => {
         if (r.status === "rejected") {
           console.error(`${labels[i]} failed:`, r.reason);
