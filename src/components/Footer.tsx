@@ -20,6 +20,7 @@ export default function Footer() {
             <li><a href="#how-it-works" className="hover:text-green transition-colors">How It Works</a></li>
             <li><a href="#pricing" className="hover:text-green transition-colors">Pricing</a></li>
             <li><a href="#contact" className="hover:text-green transition-colors">Contact</a></li>
+            <li><a href="/privacy" className="hover:text-green transition-colors">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -45,7 +46,10 @@ export default function Footer() {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <span>Norman, Yukon, Mustang, Del City, Midwest City, OKC &amp; more</span>
+              <div className="flex flex-col gap-1">
+                <span>3816 Tayport St, Norman, OK 73072</span>
+                <span className="text-white/40 text-xs">Serving Norman, Yukon, Mustang, Del City, Midwest City, OKC &amp; more</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -81,7 +85,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center md:items-end gap-1">
           <span className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} Industrial Cleaning Services. All rights reserved.
+            &copy; {new Date().getFullYear()} Industrial Cleaning Services LLC. All rights reserved.
           </span>
           <span className="text-[10px] text-white/25">
             Powered by Avexis&trade;
