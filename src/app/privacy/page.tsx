@@ -183,10 +183,10 @@ export default function PrivacyPage() {
                 <p>
                   Email:{" "}
                   <a
-                    href="mailto:Industrialcleaningservices00@gmail.com"
+                    href="mailto:bookings@industrialcleaning.services"
                     className="text-green hover:underline"
                   >
-                    Industrialcleaningservices00@gmail.com
+                    bookings@industrialcleaning.services
                   </a>
                 </p>
               </div>
